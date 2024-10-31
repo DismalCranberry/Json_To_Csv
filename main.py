@@ -6,7 +6,7 @@ json_file = 'data.json'  # Your JSON file with each row being a JSON object
 csv_file = 'output.csv'  # The CSV file to write to
 
 # Define the desired columns
-columns = ['Тегло', 'Каталожен номер', 'Размер на опаковката', 'URL', 'PRICE', 'Марка']
+columns = ['Weight', 'Catalog number', 'Pacage Size', 'URL', 'PRICE', 'Brand']
 
 # Open the input JSON file and the output CSV file
 with open(json_file, 'r', encoding='utf-8') as infile, open(csv_file, 'w', newline='', encoding='utf-8') as outfile:
@@ -21,12 +21,12 @@ with open(json_file, 'r', encoding='utf-8') as infile, open(csv_file, 'w', newli
 
         # Extract only the desired columns (handle missing keys)
         filtered_row = {
-            'Тегло': json_obj.get('Тегло'),
-            'Каталожен номер': json_obj.get('Каталожен номер'),
-            'Размер на опаковката': json_obj.get('Размер на опаковката'),
+            'Weight': json_obj.get('Weight'),
+            'Catalog number': json_obj.get('Catalog number'),
+            'Pacage Size': json_obj.get('Pacage Size'),
             'URL': json_obj.get('URL'),
             'PRICE': json_obj.get('PRICE'),
-            'Марка': json_obj.get('Марка')
+            'Brand': json_obj.get('Brand')
         }
 
         # Write the extracted data to the CSV
